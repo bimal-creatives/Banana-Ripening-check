@@ -1,6 +1,6 @@
 import cv2
 import numpy as np 
-cap = cv2.imread("IPDataset/10.jpg")
+cap = cv2.imread("IPDataset/paint.jpg")
 while(1):       
     hsv = cv2.cvtColor(cap, cv2.COLOR_BGR2HSV)
     lower_ripe = np.array([20,100,100])
