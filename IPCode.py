@@ -1,6 +1,6 @@
 import cv2
 import numpy as np 
-cap = cv2.imread("IPDataset/4.jpg")
+cap = cv2.imread("IPDataset/2.jpg")
 while(1):       
     hsv = cv2.cvtColor(cap, cv2.COLOR_BGR2HSV)
     lower_ripe = np.array([20,100,100])
@@ -16,23 +16,23 @@ while(1):
     green = np.count_nonzero(mask2)
     if(yellow>green):
         if(yellow-green>30000):
-            print("gone bad - 7+")
+            print("gone bad - 0")
         elif(yellow-green>20000):
-            print("4 days - 7+")
+            print("4 days - 1 days")
         elif(yellow-green>12000):
-            print("Very Ripe - 7+")
+            print("Very Ripe - 2 days")
         elif(yellow-green>6500):
-            print("Ripe - 6")
+            print("Ripe - 4 days")
         elif(yellow-green>6000):
-            print("Almost Ripe - 5")
+            print("Almost Ripe - 5 days")
         elif(yellow-green>3500):
-            print("Ripening - 4")
+            print("Ripening - 6 days")
         elif(yellow-green>350):
-            print("Raw - 3")
+            print("Raw - 6 days")
         elif(yellow-green>15):
-            print("Very Raw - 2")
+            print("Very Raw - 7 days")
     else:
-        print("Very Raw - 1")
+        print("Unripe")
     cv2.imshow('Image',cap)
     cv2.imshow('res1',res1)
     cv2.imshow('res2',res2)
